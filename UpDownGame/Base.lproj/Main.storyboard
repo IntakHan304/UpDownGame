@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h2-kZ-l84">
-                                <rect key="frame" x="79" y="187" width="11" height="19"/>
+                                <rect key="frame" x="79" y="186.66666666666666" width="11" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -76,6 +76,9 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                     </preferredSymbolConfiguration>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Cke-zR-vrR" kind="presentation" modalTransitionStyle="crossDissolve" id="vSR-eI-Zcp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-b2-akf">
                                 <rect key="frame" x="718" y="21.666666666666671" width="55" height="38"/>
@@ -107,10 +110,11 @@
                             <constraint firstItem="5Y7-tT-BWb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QsD-ha-0Kr"/>
                             <constraint firstItem="5Y7-tT-BWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SEL-BK-qxc"/>
                             <constraint firstItem="yjQ-My-Lrn" firstAttribute="top" secondItem="hSV-6B-Ejd" secondAttribute="bottom" constant="16" id="Sqk-Aw-Mkg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2h2-kZ-l84" secondAttribute="bottom" constant="166" id="Vaa-Y3-DSa"/>
                             <constraint firstItem="2h2-kZ-l84" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="a6I-6d-Imu"/>
                             <constraint firstItem="5Y7-tT-BWb" firstAttribute="centerY" secondItem="3UF-s0-Db8" secondAttribute="centerY" id="ab2-nM-iy5"/>
                             <constraint firstItem="okE-AE-GNN" firstAttribute="leading" secondItem="hSV-6B-Ejd" secondAttribute="trailing" constant="16" id="cMd-Fw-qeD"/>
+                            <constraint firstItem="wb6-b2-akf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Y7-tT-BWb" secondAttribute="trailing" constant="8" symbolic="YES" id="ebZ-gE-kwd"/>
+                            <constraint firstItem="5Y7-tT-BWb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3UF-s0-Db8" secondAttribute="trailing" constant="8" symbolic="YES" id="gcU-Ty-Kij"/>
                             <constraint firstItem="hSV-6B-Ejd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jSB-oE-PcG"/>
                             <constraint firstItem="hSV-6B-Ejd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oVX-0s-SOa"/>
                             <constraint firstItem="yjQ-My-Lrn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uRb-zN-VdM"/>
@@ -129,13 +133,83 @@
             </objects>
             <point key="canvasLocation" x="164.78873239436621" y="-92.36641221374046"/>
         </scene>
+        <!--Credit View Controller-->
+        <scene sceneID="HEu-Ai-xWb">
+            <objects>
+                <viewController id="Cke-zR-vrR" customClass="CreditViewController" customModule="UpDownGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cgV-bs-Tf4">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yagom_symbol" translatesAutoresizingMaskIntoConstraints="NO" id="gI3-Al-lEF">
+                                <rect key="frame" x="40" y="96.666666666666686" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bdh-mx-djc"/>
+                                    <constraint firstAttribute="height" constant="200" id="dLI-Ev-5kT"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QvI-xC-UIU">
+                                <rect key="frame" x="260" y="20" width="572" height="353"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Hello World!!
+
+
+ I'm InTak
+
+
+ My Contacts:
+ https://github.com/IntakHan304</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWs-Te-wNv">
+                                <rect key="frame" x="40" y="20.000000000000004" width="85" height="54.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark.rectangle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchUpDissmissButton:" destination="Cke-zR-vrR" eventType="touchUpInside" id="f78-js-P3r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CDV-c9-ob4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CDV-c9-ob4" firstAttribute="trailing" secondItem="QvI-xC-UIU" secondAttribute="trailing" constant="20" id="4K0-KB-ZRe"/>
+                            <constraint firstItem="hWs-Te-wNv" firstAttribute="top" secondItem="CDV-c9-ob4" secondAttribute="top" constant="20" id="5VH-qO-xtn"/>
+                            <constraint firstItem="QvI-xC-UIU" firstAttribute="leading" secondItem="gI3-Al-lEF" secondAttribute="trailing" constant="20" id="7QF-ca-X4V"/>
+                            <constraint firstItem="CDV-c9-ob4" firstAttribute="bottom" secondItem="QvI-xC-UIU" secondAttribute="bottom" constant="20" id="Wop-7C-UtN"/>
+                            <constraint firstItem="gI3-Al-lEF" firstAttribute="leading" secondItem="hWs-Te-wNv" secondAttribute="leading" id="bul-4a-mbs"/>
+                            <constraint firstItem="QvI-xC-UIU" firstAttribute="top" secondItem="CDV-c9-ob4" secondAttribute="top" constant="20" id="k9f-SU-dqQ"/>
+                            <constraint firstItem="gI3-Al-lEF" firstAttribute="centerY" secondItem="cgV-bs-Tf4" secondAttribute="centerY" id="pc1-EI-ENB"/>
+                            <constraint firstItem="hWs-Te-wNv" firstAttribute="leading" secondItem="CDV-c9-ob4" secondAttribute="leading" constant="40" id="t7S-GP-Epx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wmO-sG-Gtb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.56338028169023" y="-92.36641221374046"/>
+        </scene>
     </scenes>
     <resources>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="memories" catalog="system" width="128" height="119"/>
+        <image name="xmark.rectangle" catalog="system" width="128" height="93"/>
+        <image name="yagom_symbol" width="166.66667175292969" height="160.33332824707031"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
