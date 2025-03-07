@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //스토리 보드 요소와 연결할때 쓰는 어노테이션
     
     var randomValue: Int = 0
     var tryCount: Int = 0
     
+    //스토리 보드 요소와 연결할때 쓰는 어노테이션
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var tryCountLabel: UILabel!
     @IBOutlet weak var sliderValueLabel: UILabel!
@@ -21,7 +21,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         slider.setThumbImage(#imageLiteral(resourceName: "slider_thumb"),for: UIControl.State.normal)
         //움직이는 슬라이더에 이미지 생성
@@ -34,6 +33,7 @@ class ViewController: UIViewController {
         sliderValueLabel.text = String(integerValue)
     }
     
+    //알림부분(승리하거나 실패할떄 출력)
     func showAlert(message: String){
         let alert = UIAlertController(title: nil , message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -43,7 +43,8 @@ class ViewController: UIViewController {
         present(alert, animated: true,completion: nil)
     }
     
-    @IBAction func touchUpHitButton(_ sender: UIButton){//버튼을 누를때 마다 출력됨
+    @IBAction func touchUpHitButton(_ sender: UIButton){
+        //버튼을 누를때 마다 출력됨 - 슬라이더 아래쪽의 버튼을 누를때 실행됨
         print(slider.value)
         let hitValue: Int = Int(slider.value)
         slider.value = Float(hitValue)
@@ -52,17 +53,23 @@ class ViewController: UIViewController {
         tryCountLabel.text = "\(tryCount) / 5"
         
         if randomValue == hitValue {
+            //맞췄을 경우 출력
             //print("YOU HIT!!")
             showAlert(message: "YOU HIT!!")
             reset()
         }else if tryCount >= 5 {
+            //5번 시도해도 못 맞출 경우 출력
             //print("You lose")
             showAlert(message: "You lose...")
             reset()
         }else if randomValue > hitValue {
+            //누른 숫자가 랜덤으로 고른 숫자보다 큰 경우
+            //왼쪽의 최소값이 누른 숫자로 올러감
             slider.minimumValue = Float(hitValue)
             minimumValueLabel.text = "\(hitValue)"
         } else {
+            //누른 숫자가 랜덤으로 고른 숫자보다 작은 경우
+            //오른쪽의 최대값이 누른 숫자로 내려감
             slider.maximumValue = Float(hitValue)
             maximumValueLabel.text = "\(hitValue)"
         }
@@ -74,6 +81,7 @@ class ViewController: UIViewController {
     } //이름을 바꿀땐 그냥 바꾸는 것이 아니라 이름에다가(오른쪽 클릭 후)Refactor -> rename으로 들어가서 바꿀 수 있게 한다
     
     func reset(){
+        //리셋 구현 부분
         print("reset")
         randomValue = Int.random(in: 0...30)
         //범위 연산자 a...b까지 a..<b 로 표기되면 a부터 b직전까지(b값은 포함 안됨)
